@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="numgame.css" />
+    <title>Guess The Number Game!</title>
+  </head>
+  <body onload="init()">
+    <div id="container">
+      <div class="panel">
+        <h2>I have a random number between 1-100</h2>
+        <h3>Dare to guess?</h3>
+        <hr />
+        <h4>Select difficulty setting:</h4>
+        <button id="newGame" onclick="newGame()">
+          New Game
+        </button>
+        <br />
+        <button id="easyInput" onclick="easyPick()">
+          Easy: Guess in 10 attempts (default)
+        </button>
+        <br />
+        <button id="hardInput" onclick="hardPick()">
+          Hard: Guess in 5 attempts
+        </button>
+      </div>
+      <div class="panel">
+        <h3 id="userResult">
+          Enter your guess below & press enter
+        </h3>
+        <input
+          type="number"
+          id="userInput"
+          min="1"
+          max="100"
+          onchange="compareGuess()"
+        />
+        <p>Number of previous attempts: <span id="userPlay">0</span></p>
+      </div>
+      <div class="panel">
+        <p>Your previous guess:</p>
+        <p id="userGuess"></p>
+      </div>
+    </div>
+    <script src="numgame.js"></script>
+  </body>
+</html>
